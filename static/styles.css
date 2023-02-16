@@ -1,0 +1,138 @@
+*{
+      margin:5px;
+      padding: 0;
+      box-sizing: border-box;
+      font-family:'Poppins',sans-serif;
+}
+h1{
+      color: rgb(3, 2, 21);
+      text-align: center;
+      
+}
+body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(rgb(97, 215, 205), #d46ed1, #cb5d6f);
+}
+.container{
+      max-width:720px;
+      width: 100%;
+      background: rgb(220, 240, 240);
+      padding: 25px 35px;
+      border-radius: 10px;
+}
+
+form .user-details{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      
+}
+
+form .input{
+      margin: 20px 0 12px 0;
+      width: calc(100%/2 - 20px); 
+}
+.user-details .input input,select{
+      height: 35px;
+      width: 100%;
+      border-radius: 30px solid #ccc;
+      padding: 5px;
+      font-size: 13px;
+}
+
+
+.user-details select:hover{
+      color:rgb(58, 8, 238);
+      border-color: rgb(220, 240, 240);
+}
+.user-details select:hover{
+      background: rgb(159, 194, 194);
+}
+option{
+      color:black;
+      background:rgb(220, 240, 240);
+}
+.user-details input:invalid{
+      border-color: #dab5e9;
+}
+/*for container also*/
+
+
+form .button{
+      height:25px;
+      margin:25px 0;
+}
+
+form .button input{
+      height: 100%;
+      width: 100%;
+      outline: None;
+      background:linear-gradient(135deg, #71b7e6, #9b59b6);
+      font-size: 18px;
+      letter-spacing: 2px;
+      font-weight: 500;
+      color: rgb(234, 240, 246);
+      border-radius: 10px;
+}
+
+form .button input:hover{
+      background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+}
+
+form .user-details input{
+      margin-bottom: 15px;
+      width:100%;
+}
+form .c1 input{
+      height: 70%;
+      width: 70%;
+      outline: None;
+      background:linear-gradient(135deg, #71b7e6, #9b59b6);
+      font-size: 18px;
+      letter-spacing: 2px;
+      font-weight: 500;
+      color: rgb(234, 240, 246);
+      border-radius: 5px;
+}
+form .c1 input:hover{
+      background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+}
+.head{
+      
+      background-image: url('cars.jpg');
+      background-size: cover;
+      align-items: center;
+      height: 200px;
+      width:600px;
+}
+h1{
+      color: rgb(58, 149, 209);
+      letter-spacing: 1px;
+}
+p{
+      font-weight: 500;
+      font-size: 18px;
+}
+.m{
+      padding: 10px;
+      font-weight: 550;
+      font-size: 18px;
+      color: rgb(11, 55, 198);
+}
+p2{
+      font-size: 10px;
+      text-align: right;
+      color:rgb(49, 34, 147);
+}
+#result{
+      color: rgb(12, 10, 10);
+      background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+      border-radius: 10px;
+      padding: 20px 140px;
+
+}
+
+
+

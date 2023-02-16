@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Cars Price Prediction</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }} "> 
+</head>
+<body>
+      <div class="container">
+            <div id="logout"><a href="{{url_for('home')}}">⏳LOGOUT</a></div>
+            <h1>SELL YOUR CAR AT BEST PRICE🚗💰</h1>
+            <p2>Using Machine-Learning </p2>
+            <div class="head"></div>
+            <div class="container1" >
+                  <form action="{{url_for('model')}}" method="post"> <!--/model -->
+                        <div class="c1">
+                              <label for="brand">PLEASE SELECT THE BRAND OF YOUR CAR:</label><br>
+                              <select id="brand" name="brand" required>
+                                    {% for i in lst %}
+                                    <option value="{{i}}">{{i}}</option>
+                                    {% endfor %}
+                                    <input class='button' type="submit" value="confirm your brand">
+                              </select>
+                        </div>
+                  </form>
+            </div>
+
+            <div class="container2">
+                  <form action="{{url_for('rest_feat')}}" method="post"><!--/rest_feat-->
+                        <p1>(Confirm your car brand before selecting model)</p1>
+                        <div class="m">
+                              <p>CHOSEN MODEL:{{mdl}}</p>
+                        </div>
+                        <div class="user-details">
+                              <div class="input">
+                                    <label for="model"><p>Select your car model:</p></label><br>
+                                    <select id="model" name="model" value='select brand to choose' required>
+                                          {% for i in d_lst %}
+                                          <option value="{{i}}">{{i}}</option>
+                                          {% endfor %}
+                                    </select>
+                              </div>
+                              
+                              <div class="input">
+                                    <label for="location"><p>Location:</p></label><br>
+                                    <select id="location" name="location" value="Enter Location" required>
+                                          {% for i in loc %}
+                                          <option value="{{i}}">{{i}}</option>
+                                          {% endfor %}
+                                    </select>
+                              </div>
+                              
+                              <div class="input">
+                                    <label for="fuel"><p>FUEL TYPE:</p></label><br>
+                                    <select id="fuel" name="fuel" value="Fuel Type" required>
+                                          <option value="Petrol">PETROL</option>
+                                          <option value="Diesel">DIESEL</option>
+                                          <option value="CNG">   CNG   </option>
+                                          <option value="LPG">   LPG   </option>
+                                    </select>
+                              </div>
+                              
+                              
+                              <div class="input">
+                                    <label for="transmission"><p>TRANSMISSION:</p></label><br>
+                                    <select id="transmission" name="transmission" value="Transmission" required>
+                                          <option value="Manual">   MANUAL   </option>
+                                          <option value="Automatic">AUTOMATIC</option>
+                                    </select>
+                              </div>
+                              
+                              <div class="input">
+                                    <label for="owner"><p>OWNER TYPE:</p></label><br>
+                                    <select id="owner" name="owner" value="Owner Type" required>
+                                          <option value="First">         FIRST</option>
+                                          <option value="Second">        SECOND</option>
+                                          <option value="Third">         THIRD</option>
+                                          <option value="Fourth & Above">FOURTH & ABOVE</option>
+                                    </select>
+                                    <br>
+                              </div>
+                              
+                              <div class="input">
+                                    <label for="year"><p>YEAR:</p></label><br>
+                                    <input id="year" type="number" name="year" value="Year" required>
+                              </div>
+                              
+                              <div class="input">
+                                    <label for="kms"><p>KILO-METERS DRIVEN(in kms):</p></label><br>
+                                    <input id="kms" type="number" name="kms" value="Kms Range" required>
+                              </div>
+                              
+                              <div class="input">
+                                    <label for="mileage"><p>MILEAGE(in km/l):</p></label><br>
+                                    <input id="mileage" type="number" name="mileage" placeholder="[0,40]" required>
+                                    <br>
+                              </div>
+                              
+                              <div class="input">
+                                    <label for="engine"><p>ENGINE (in cc) </p>:</label><br>
+                                    <input id="engine" type="number" name="engine" placeholder="[600,6000]" required>
+                                    <br>
+                              </div>
+                              
+                              <div class="input">
+                                    <label for="power"><p>POWER (in bhp) </p>:</label><br>
+                                    <input id="power" type="number" name="power" placeholder="[30,600]" required>
+                              </div>
+                              
+                              <div class="input">
+                                    <label for="seats"><p>TOTAL SEATS PRESENT:</p></label><br>
+                                    <input id="seats" type="number" name="seats" placeholder="[2,10]" required>
+                              </div>
+                              
+                              
+                        </div>
+                        <div class="button">
+                              <input type="submit" value="CHECK PRICE">
+                        </div>
+                  </form>
+            </div>
+            
+            <div id="result">
+                  <p>Estimated Price of the car is : {{res}} lakhs</p>
+            </div>
+      </div>
+
+      
+</body>
+</html>
